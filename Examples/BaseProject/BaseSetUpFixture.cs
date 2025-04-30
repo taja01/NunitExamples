@@ -6,7 +6,6 @@ using Serilog;
 using Serilog.Extensions.Logging;
 
 namespace BaseProject
-
 {
     [SetUpFixture]
     public abstract class BaseSetUpFixture
@@ -134,8 +133,9 @@ namespace BaseProject
         /// <summary>
         /// Resolves the environment from NUnit TestContext parameters or system environment variables.
         /// </summary>
+        /// <example>dotnet test -- TestRunParameters.Parameter(name="\""environment"\"", value="\""DEV"\"")</example>
         /// <returns>The environment name string.</returns>
-        private string ResolveEnvironment()
+        private static string ResolveEnvironment()
         {
             // Try NUnit test parameters first.
             var env = TestContext.Parameters["environment"];
