@@ -3,19 +3,27 @@
     [TestFixture]
     public class CalculatorTests
     {
-        [Test]
-        public void Add_WhenCalled_ReturnsSumOfArguments()
+        private Calculator _calculator;
+
+        [SetUp]
+        public void Init()
         {
-            // Arrange
-            var calculator = new Calculator();
+            // Runs before each test method
+            _calculator = new Calculator();
+        }
 
-            int a = 5, b = 7;
+        [Test]
+        public void Add_WithPositiveNumbers_ReturnsCorrectSum()
+        {
+            int result = _calculator.Add(3, 4);
+            Assert.That(result, Is.EqualTo(7));
+        }
 
-            // Act
-            int result = calculator.Add(a, b);
-
-            // Assert
-            Assert.That(result, Is.EqualTo(12), "Addition did not return expected result.");
+        [Test]
+        public void Add_WithNegativeNumbers_ReturnsCorrectSum()
+        {
+            int result = _calculator.Add(-2, -3);
+            Assert.That(result, Is.EqualTo(-5));
         }
     }
 }
