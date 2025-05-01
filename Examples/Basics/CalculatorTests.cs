@@ -12,6 +12,17 @@
             _calculator = new Calculator();
         }
 
+        public static IEnumerable<TestCaseData> MultiplyTestCases
+        {
+            get
+            {
+                yield return new TestCaseData(2, 3, 6);
+                yield return new TestCaseData(-1, 5, -5);
+                yield return new TestCaseData(0, 10, 0);
+            }
+        }
+
+
         [Test]
         public void Add_WithPositiveNumbers_ReturnsCorrectSum()
         {
@@ -39,6 +50,13 @@
         public void Divide_DenominatorIsZero_ThrowsDivideByZeroException()
         {
             Assert.Throws<DivideByZeroException>(() => _calculator.Divide(10, 0));
+        }
+
+        [Test, TestCaseSource(nameof(MultiplyTestCases))]
+        public void Multiply_WithVariousInputs_ReturnsExpectedResult(int a, int b, int expected)
+        {
+            int result = _calculator.Multiply(a, b);
+            Assert.That(result, Is.EqualTo(expected));
         }
     }
 }
