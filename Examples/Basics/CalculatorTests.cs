@@ -25,5 +25,14 @@
             int result = _calculator.Add(-2, -3);
             Assert.That(result, Is.EqualTo(-5));
         }
+
+        [TestCase(1, 2, 3)]
+        [TestCase(5, 5, 10)]
+        [TestCase(-1, -1, -2)]
+        public void Add_WithDifferentValues_ReturnsExpectedSum(int a, int b, int expected)
+        {
+            int result = _calculator.Add(a, b);
+            Assert.That(result, Is.EqualTo(expected));
+        }
     }
 }
