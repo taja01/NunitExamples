@@ -34,5 +34,11 @@
             int result = _calculator.Add(a, b);
             Assert.That(result, Is.EqualTo(expected));
         }
+
+        [Test]
+        public void Divide_DenominatorIsZero_ThrowsDivideByZeroException()
+        {
+            Assert.Throws<DivideByZeroException>(() => _calculator.Divide(10, 0));
+        }
     }
 }
