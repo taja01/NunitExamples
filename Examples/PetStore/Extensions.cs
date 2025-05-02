@@ -5,7 +5,7 @@ namespace PetStore
 {
     public static class Extensions
     {
-        public static IServiceCollection AddWeatherAppClient(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddPetStoreClient(this IServiceCollection services, IConfiguration configuration)
         {
             var options = new PetStoreOptions();
             configuration.Bind(nameof(PetStoreOptions), options);
