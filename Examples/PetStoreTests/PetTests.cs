@@ -32,7 +32,7 @@ namespace PetStoreTests
 
         [Test]
         [Order(1)]
-        public async Task GetTest()
+        public void GetTest()
         {
             Assert.ThrowsAsync<ApiException>(async () => await _client.GetPetByIdAsync(pet.Id.Value).ConfigureAwait(false));
         }

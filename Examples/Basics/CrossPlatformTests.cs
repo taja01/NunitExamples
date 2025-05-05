@@ -16,6 +16,6 @@ public class CrossPlatformTests
     public void TestOperatingSystem()
     {
         Assert.That(_os, Is.Not.Null);
-        TestContext.WriteLine($"Testing on {_os}");
+        TestContext.Out.WriteLine($"Testing on {_os}");
     }
 }
