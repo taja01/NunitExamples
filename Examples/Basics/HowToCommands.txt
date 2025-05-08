@@ -1,4 +1,10 @@
-﻿0. Filter expression supports logical operators:
+﻿-1 Verify the SDK Version
+dotnet --version
+
+List Available Tests
+dotnet test --list-tests
+
+0. Filter expression supports logical operators:
 | → Logical OR
 & → Logical AND
 ~ → Logical NOT
@@ -42,3 +48,39 @@ dotnet test --no-parallel
 Alternatively, you can control the degree of parallelism:
 dotnet test --maxcpucount=<number-of-threads>
 
+5. Skip Build Before Running Tests
+
+By default, dotnet test builds the project before running tests. If you want to skip this behavior (e.g., if the project has already been built), use the --no-build option:
+dotnet test --no-build
+
+Restore Packages Before Testing
+dotnet restore && dotnet test
+
+Auto-Rebuild Projects During Testing
+dotnet test --build
+
+6. Enable Code Coverage
+
+If your test project contains proper setup for code coverage (e.g., using a tool like coverlet), you can enable code coverage reporting:
+dotnet test --collect:"Code Coverage"
+
+7. Run Tests in CI Mode
+
+Simulate running tests in Continuous Integration (CI) mode:
+dotnet test -- CI
+
+8 Specify Runtime or Framework
+
+Run tests with a specific runtime or framework:
+dotnet test --framework net6.0
+
+9 Pass Command-Line Arguments to Tests
+
+Pass additional arguments to your tests (e.g., custom configuration for test behavior):
+dotnet test -- <argument>
+like:
+dotnet test -- --customkey=value
+
+10 Filter Tests by Fully Qualified Name
+dotnet test --filter FullyQualifiedName~Basics.TestCategories
+dotnet test --filter FullyQualifiedName~Basics.TestCategories.UnitTest
