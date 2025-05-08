@@ -1,0 +1,44 @@
+﻿0. Filter expression supports logical operators:
+| → Logical OR
+& → Logical AND
+~ → Logical NOT
+
+1. Run Tests
+Run all tests in your project:
+
+dotnet test
+
+# Run specific tests with filters:
+## By test name:
+dotnet test --filter Name=<TestName>
+
+e.g.: dotnet test --filter Name=AddTest (case sensitive!)
+e.g.: dotnet test --filter Name="AddTest|UnitTest"
+
+## By category:
+dotnet test --filter TestCategory=<Category>
+
+e.g: dotnet test --filter TestCategory=Unit
+e.g2: dotnet test --filter TestCategory!=Unit
+
+2. Display Results in Detailed Mode
+By default, test results might be summarized. To enable detailed output for all test results (including passed tests):
+
+dotnet test --logger "console;verbosity=detailed"
+
+3. Generate Test Results File
+
+To export results to a file for later analysis, use the --results-directory option:
+dotnet test --results-directory <path-to-directory>
+
+Example (to store results in a folder called TestResults):
+dotnet test --results-directory ./TestResults --logger "trx"
+
+4. Control Test Execution Parallelism
+
+Prevent tests from running in parallel (useful when your tests have shared resources or dependencies):
+dotnet test --no-parallel
+
+Alternatively, you can control the degree of parallelism:
+dotnet test --maxcpucount=<number-of-threads>
+
