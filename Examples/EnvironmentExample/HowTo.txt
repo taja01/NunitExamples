@@ -1,0 +1,4 @@
+﻿Make sure autodetection of runsettings in enabled in Visual Studio by checking this checkbox: Tools > Options > Test > Auto Detect runsettings Files.
+Or select the correct .runsettings file!
+
+TODO: check with command lines!
