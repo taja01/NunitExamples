@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetStoreTests", "PetStoreTe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Advanced", "Advanced\Advanced.csproj", "{7D4AD2F0-9279-4771-B47B-34923C5276D3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnvironmentExample", "EnvironmentExample\EnvironmentExample.csproj", "{EE632ECF-7BF3-4D85-921D-04799A3A1CCB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{7D4AD2F0-9279-4771-B47B-34923C5276D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D4AD2F0-9279-4771-B47B-34923C5276D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D4AD2F0-9279-4771-B47B-34923C5276D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE632ECF-7BF3-4D85-921D-04799A3A1CCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE632ECF-7BF3-4D85-921D-04799A3A1CCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE632ECF-7BF3-4D85-921D-04799A3A1CCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE632ECF-7BF3-4D85-921D-04799A3A1CCB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
